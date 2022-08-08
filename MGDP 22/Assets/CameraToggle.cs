@@ -6,6 +6,7 @@ public class CameraToggle : MonoBehaviour
 {
     public GameObject targetObject;
     private float targetAngle = 0;
+    private float buffer = 1.0f;
     const float rotationAmount = 1.5f;
     public float rDistance = 1.0f;
     public float rSpeed = 1.0f;
@@ -27,17 +28,17 @@ public class CameraToggle : MonoBehaviour
             //(might need to be adjusted if we change that initialization though)
             if (Camera.main.orthographic)
             {
-                targetAngle -= 90.0f;
+                targetAngle -= 70.0f;
             }
             else
             {
-                targetAngle += 90.0f;
+                targetAngle += 70.0f;
             }
             //toggle!
             Camera.main.orthographic = !Camera.main.orthographic;
         }
 
-        if (targetAngle != 0)
+        if (targetAngle < (-1*buffer) || targetAngle > buffer)
         {
             Rotate();
         }
