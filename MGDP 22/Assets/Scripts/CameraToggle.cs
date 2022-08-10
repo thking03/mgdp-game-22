@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraToggle : MonoBehaviour
 {
+    public GameObject player;
+
     public GameObject targetObject;
     private float targetAngle = 0;
     private float buffer = 1.0f;
@@ -22,7 +24,7 @@ public class CameraToggle : MonoBehaviour
     {
 
         // Trigger functions if Rotate is requested
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && player.GetComponent<PlayerControl>().OnGround())
         {
             //bc camera is initialized as orthographic, functions as an "if in initial position"
             //(might need to be adjusted if we change that initialization though)
@@ -36,6 +38,7 @@ public class CameraToggle : MonoBehaviour
             }
             //toggle!
             Camera.main.orthographic = !Camera.main.orthographic;
+            player.GetComponent<PlayerControl>().SwitchDimensions();
         }
 
         if (targetAngle < (-1*buffer) || targetAngle > buffer)
@@ -46,6 +49,7 @@ public class CameraToggle : MonoBehaviour
 
     protected void Rotate()
     {
+        
 
         float step = rSpeed * Time.deltaTime;
         float orbitCircumfrance = 2F * rDistance * Mathf.PI;
@@ -63,5 +67,6 @@ public class CameraToggle : MonoBehaviour
             targetAngle += rotationAmount;
         }
 
+        
     }
 }
