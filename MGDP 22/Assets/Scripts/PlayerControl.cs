@@ -61,6 +61,14 @@ public class PlayerControl : MonoBehaviour
                 transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
             }
         }
+
+        //don't rotate!!
+        if (((transform.rotation.eulerAngles.x < 358) && (transform.rotation.eulerAngles.x > 2)) ||
+     ((transform.rotation.eulerAngles.z < 358) && (transform.rotation.eulerAngles.z > 2)) || ((transform.rotation.eulerAngles.y < 358) && (transform.rotation.eulerAngles.y > 2)))
+        {
+            // put character to default rotation
+            transform.rotation = Quaternion.identity;
+        }
     }
 
     public void SwitchDimensions()
@@ -76,8 +84,8 @@ public class PlayerControl : MonoBehaviour
 
     public bool OnGround()
     {
-
-        return Mathf.RoundToInt(transform.position.y) == transform.position.y;
+        //ADDED IN BUFFER 8-11 (the +- 0.05 thing is what to change if you don't like it)
+        return (Mathf.RoundToInt(transform.position.y) <= transform.position.y + 0.05 && Mathf.RoundToInt(transform.position.y) >= transform.position.y - 0.05);
 
     }
 
