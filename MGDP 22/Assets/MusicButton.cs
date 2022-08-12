@@ -36,11 +36,13 @@ public class MusicButton : MonoBehaviour
             audionum = (audionum + 1) % 5;
             music.clip = audios[audionum];
             Debug.Log("Audio switched to"+ audios[audionum].ToString());
+            music.Play();
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        // currently not detecting if the object entering the Collider is the player
             isInteractable = true;
             Debug.Log("Entered interactable area");
     }
