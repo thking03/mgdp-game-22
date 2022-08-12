@@ -6,15 +6,21 @@ public class CameraPanIntro : MonoBehaviour
 {
     public GameObject player;
     public GameObject towerBlock;
+    public GameObject tower2Block;
+    public GameObject tower3Block;
     public float initialY;
     public float camY;
 
-    public bool firstLit = false;
+    public static bool firstLit = false;
+    public static bool secondLit = false;
+    public static bool thirdLit = false;
+    //public static int numLit = 0;
 
     // Start is called before the first frame update
     void Start()
     {
 
+        
         Camera.main.orthographicSize = 4f;
         initialY = player.transform.position.y + 2;
         //initialize camera position
@@ -61,6 +67,16 @@ public class CameraPanIntro : MonoBehaviour
             }
 
 
+        }
+
+        if ((Vector3.Distance(player.transform.position, tower2Block.transform.position) <= 2) && !secondLit)
+        {
+            secondLit = true;
+        }
+
+        if ((Vector3.Distance(player.transform.position, tower3Block.transform.position) <= 2) && !thirdLit)
+        {
+            thirdLit = true;
         }
 
     }

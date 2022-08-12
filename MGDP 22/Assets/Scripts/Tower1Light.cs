@@ -44,11 +44,12 @@ public class Tower1Light : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if((Vector3.Distance(player.transform.position,towerBlock.transform.position) <= 2) && !isStarted)
         {
             isStarted = true;
             StartCoroutine(lightUp());
-            //Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, 8f, 0.1f);
+            
 
         }
     }

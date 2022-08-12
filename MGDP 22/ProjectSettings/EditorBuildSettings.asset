@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/watchtower intro.unity
+    guid: c5db89e6151574d28ab26776114db604
+  - enabled: 1
+    path: Assets/Scenes/npc town.unity
+    guid: 25e6b2874c3bc419fb14b7e8a13c8db8
   m_configObjects: {}
