@@ -99,8 +99,24 @@ public class PlayerControl : MonoBehaviour
                 return false;
             }
 
-            
 
+            if (obj.GetComponent<GridControl>().position == loc + transform.position && obj.GetComponent<GridControl>().moveable == true)
+            {
+                if(obj.GetComponent<GridControl>().checkMoveable(loc, world) == false)
+                {
+                    return false;
+                } else if(OnGround())
+                {
+                    if (obj.GetComponent<GridControl>().button == false)
+                    {
+                        obj.transform.position = obj.transform.position + loc;
+                        obj.GetComponent<GridControl>().UpdatePosition();
+                    } else
+                    {
+                        obj.GetComponent<GridControl>().ButtonClick();
+                    }
+                }
+            }
         }
 
    
