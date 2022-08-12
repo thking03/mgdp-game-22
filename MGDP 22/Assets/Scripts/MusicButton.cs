@@ -32,11 +32,17 @@ public class MusicButton : MonoBehaviour
     {
         if(isInteractable && Input.GetKeyDown(KeyCode.Space))
         {
-            // This method works at switching inside the dictionary but sound currently isn't playing.
-            audionum = (audionum + 1) % 5;
-            music.clip = audios[audionum];
-            Debug.Log("Audio switched to"+ audios[audionum].ToString());
-            music.Play();
+            audionum = (audionum + 1) % 6;
+            if (audionum != 5)
+            {
+                music.clip = audios[audionum];
+                Debug.Log("Audio switched to " + audios[audionum].ToString());
+                music.Play();
+            }
+            if (audionum == 5)
+            {
+                music.Stop();
+            }
         }
     }
 
@@ -44,13 +50,13 @@ public class MusicButton : MonoBehaviour
     {
         // currently not detecting if the object entering the Collider is the player
             isInteractable = true;
-            Debug.Log("Entered interactable area");
+            Debug.Log("Entered interactable area of MusicButton");
     }
 
     private void OnTriggerExit(Collider other)
     {
             isInteractable = false;
-            Debug.Log("Exited interactable area");
+            Debug.Log("Exited interactable area of MusicButton");
     }
 }
 
