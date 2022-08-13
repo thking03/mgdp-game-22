@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 315154724}
   - component: {fileID: 315154723}
   - component: {fileID: 315154727}
+  - component: {fileID: 315154728}
   m_Layer: 0
   m_Name: AudioInterface
   m_TagString: Untagged
@@ -308,7 +309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315154722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.8962004, y: 17.043152, z: -7.240382}
+  m_LocalPosition: {x: 4, y: 17, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -336,6 +337,19 @@ MonoBehaviour:
   Fdots: {fileID: 8300000, guid: 6169611dad0695945894c443d2adab2d, type: 3}
   Fpad: {fileID: 8300000, guid: 5070a57fdd3c6984c800e4f1985a7170, type: 3}
   Improv: {fileID: 8300000, guid: 9a057fdf61fb9d642a61f767559e6f68, type: 3}
+--- !u!65 &315154728
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315154722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &398029886
 GameObject:
   m_ObjectHideFlags: 0

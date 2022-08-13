@@ -51,6 +51,11 @@ public class MusicLayerController : MonoBehaviour
     {
         if (isInteractable && Input.GetKeyDown(KeyCode.Space))
         {
+            if (music.isPlaying) // If music is currently waiting, wait for the clip to end.
+            {
+                MusicTransitioner(music);
+            }
+
             if (audionum != DictLens[audioID])
             {
                 if (audioID == 0)
@@ -84,5 +89,15 @@ public class MusicLayerController : MonoBehaviour
     {
         isInteractable = false;
         Debug.Log("Exited an interactable area of MusicLayerController");
+    }
+
+    // Adding in transition timers for elements
+    public void MusicTransitioner(AudioSource source)
+    {
+        float audtime = source.time; // Get current position in the track
+        float tracktime = source.clip.length; // Get the length of the track
+        int sleeptime = (int)Mathf.Round(1000 * (tracktime - audtime));
+        Debug.Log("Pausing " + sleeptime.ToString() + " milliseconds.");
+        System.Threading.Thread.Sleep(sleeptime);
     }
 }
