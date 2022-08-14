@@ -8,9 +8,13 @@ public class GridControl : MonoBehaviour
     public bool moveable;
     public bool fallable;
     public bool button;
+    public bool isNpc;
+    public bool isInteractable;
     public UnityEvent buttonAction;
+    public UnityEvent interactAction;
     public Vector3 position;
     private GameObject player;
+    public GameObject interactSymbol;
 
     private void Start()
     {
@@ -56,6 +60,11 @@ public class GridControl : MonoBehaviour
     public void ButtonClick()
     {
         buttonAction.Invoke();
+    }
+
+    public void InteractClick()
+    {
+        interactAction.Invoke();
     }
 
     public void TestButton()

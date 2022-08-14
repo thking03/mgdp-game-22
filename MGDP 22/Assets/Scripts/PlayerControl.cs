@@ -9,8 +9,40 @@ public class PlayerControl : MonoBehaviour
     public Rigidbody rb;
     public float jumpForce;
     public GameObject raycastSpawn;
+    [SerializeField]
+    public static float minInteractDistance = 1.5f;
 
     private GameObject[] world;
+
+    private GameObject closestInteract()
+    {
+        GameObject ret = null;
+        float dist = minInteractDistance;
+
+        foreach (GameObject obj in world)
+        {
+            GridControl grid = obj.GetComponent<GridControl>();
+            if (grid.isInteractable)
+            {
+                grid.interactSymbol.SetActive(false);
+            }
+        }
+
+        foreach (GameObject obj in world)
+        {
+            GridControl grid = obj.GetComponent<GridControl>();
+            Vector3 myPos = new Vector3(transform.position.x, 0, transform.position.y);
+            Vector3 theyPos = new Vector3(obj.transform.position.x, 0, obj.transform.position.y);
+
+            if(grid.isInteractable && Vector3.Distance(myPos, theyPos) < dist)
+            {
+                dist = Vector3.Distance(transform.position, obj.transform.position);
+                ret = obj;
+            } 
+        }
+
+        return ret;
+    }
 
     private void Start()
     {
@@ -21,12 +53,25 @@ public class PlayerControl : MonoBehaviour
     {
         if (inTwoD)
         {
+            //Interactability
+            GameObject interact = closestInteract();
+            if(interact != null)
+            {
+                interact.GetComponent<GridControl>().interactSymbol.SetActive(true);
+                if(Input.GetButtonDown("Interact"))
+                {
+                    interact.GetComponent<GridControl>().InteractClick();
+                }
+            }
+
+
+            //Movement
             Vector3 dir = new Vector3(0, 0 , 0);
 
             if (Input.GetButton("Right") && !Input.GetButton("Left"))
             {
                 dir.x = speedTwoD * Time.deltaTime;
-            } else if(Input.GetButton("Left") && !Input.GetButton("Right") && checkMoveable(new Vector3(-1,0,0)))
+            } else if(Input.GetButton("Left") && !Input.GetButton("Right"))
             {
                 dir.x = -1 * speedTwoD * Time.deltaTime;
             }
@@ -75,6 +120,15 @@ public class PlayerControl : MonoBehaviour
         if(inTwoD)
         {
             transform.position = new Vector3(Mathf.Round(transform.position.x), transform.position.y, transform.position.z);
+        }
+
+        foreach (GameObject obj in world)
+        {
+            GridControl grid = obj.GetComponent<GridControl>();
+            if (grid.isInteractable)
+            {
+                grid.interactSymbol.SetActive(false);
+            }
         }
 
 
