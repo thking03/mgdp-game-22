@@ -19,7 +19,6 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-
         if (inTwoD)
         {
             Vector3 dir = new Vector3(0, 0 , 0);
@@ -27,7 +26,7 @@ public class PlayerControl : MonoBehaviour
             if (Input.GetButton("Right") && !Input.GetButton("Left"))
             {
                 dir.x = speedTwoD * Time.deltaTime;
-            } else if(Input.GetButton("Left") && !Input.GetButton("Right"))
+            } else if(Input.GetButton("Left") && !Input.GetButton("Right") && checkMoveable(new Vector3(-1,0,0)))
             {
                 dir.x = -1 * speedTwoD * Time.deltaTime;
             }
@@ -117,6 +116,11 @@ public class PlayerControl : MonoBehaviour
                     }
                 }
             }
+        }
+
+        if((transform.position + loc).z < 0 || (transform.position + loc).z > 25 || (transform.position + loc).x < -14)
+        {
+            return false;
         }
 
    

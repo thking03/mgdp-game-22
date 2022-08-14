@@ -30,11 +30,11 @@ public class CameraToggle : MonoBehaviour
             //(might need to be adjusted if we change that initialization though)
             if (Camera.main.orthographic)
             {
-                targetAngle -= 70.0f;
+                targetAngle -= 30.0f;
             }
             else
             {
-                targetAngle += 70.0f;
+                targetAngle += 30.0f;
             }
             //toggle!
             Camera.main.orthographic = !Camera.main.orthographic;
