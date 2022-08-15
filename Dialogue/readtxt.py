@@ -15,9 +15,8 @@ playerids = {
     "TOMMY": 5,
     "THADDEUS": 6,
     "PLAYER" : 7,
-    "PLAYER (thought)" : 8,
-    "LOOKOUT" : 9,
-    "SYSTEM" : 10
+    "LOOKOUT" : 8,
+    "SYSTEM" : 9
 }
 
 objectlist = []
