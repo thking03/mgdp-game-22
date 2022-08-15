@@ -1,0 +1,76 @@
+PROLOGUE
+
+    -- -- --
+% First Lookout's Conversation
+    -- -- --
+    PLAYER walks to LOOKOUT.
+
+LOOKOUT
+Hey, /Player/. Good to see you. Glad you got my message.
+
+PLAYER
+What's happening? You said you saw something to the west?
+
+LOOKOUT
+Yeah. The clouds on the horizon seem darker than the thunderheads above us right now. I'm not sure what's going on yet, but they don't look good.
+
+PLAYER
+Any word from the town?
+
+LOOKOUT
+Not yet. They probably don't know. 
+
+LOOKOUT
+Anyway, I wanted you here because I needed someone to light the warning towers. We don't want anyone getting caught in whatever's coming, and I've got to stay here to monitor everything.
+
+PLAYER
+Got it. I'll radio when it's done.
+
+LOOKOUT
+Thanks, kid. See you on the other side, then.
+
+    -- -- --
+% Second Lookout's Conversation
+    -- -- --
+	PLAYER activates the last tower.
+
+PLAYER
+It's gotten chillier since I left, but that's the last one lit. 
+
+	Radio static. Wind through the receiver.
+
+PLAYER
+This is /Player/, calling in. Warning towers are lit, and I'm headed back to the Lookout. Over.
+
+
+LOOKOUT
+Roger, kid. But head back into town. It's getting dicey out here and you've been out for a week.
+
+PLAYER
+You sure you'll be fine by yourself?
+
+LOOKOUT
+I've been monitoring this land for twice as long as you've been alive. No need to worry about me.
+
+PLAYER
+Fine. But I'm coming out first thing in the morning.
+
+LOOKOUT
+Of course, kid, I wouldn't expect anything less. G'night. I'll see you in the--
+
+Through the receiver, a crash of thunder, splintering wood and metal. When the sound fades, only ringing and intense static.
+
+PLAYER
+What's going on?
+
+LOOKOUT
+Worse than -- thought -- go back and tell Mayor -- 
+
+PLAYER
+I'm not leaving you out there. I can be there in thirty minutes and then--
+
+LOOKOUT
+No, kid, let me -- make sure you tell -- worse --
+
+	The receiver goes dead. Silence.
+~  
