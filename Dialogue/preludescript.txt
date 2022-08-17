@@ -1,7 +1,7 @@
 PROLOGUE
 
     -- -- --
-% First Lookout's Conversation
+First Lookout's Conversation
     -- -- --
     PLAYER walks to LOOKOUT.
 
@@ -30,7 +30,7 @@ LOOKOUT
 Thanks, kid. See you on the other side, then.
 
     -- -- --
-% Second Lookout's Conversation
+Second Lookout's Conversation
     -- -- --
 	PLAYER activates the last tower.
 

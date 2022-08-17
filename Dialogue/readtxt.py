@@ -23,29 +23,42 @@ objectlist = []
 idcounter = 0
 inconvo = False
 nextlinedialogue = False
+convdetect = False
 linecounter = 0
+
+if sys.argv[3]:
+    with open(sys.argv[3]) as f:
+        orderdict = json.load(f)
+    lineorders = True
+
+print(orderdict)
 
 with open(sys.argv[1]) as textfile:
     for line in textfile:
         line = line[:-1] # Drop the /n
-        if "%" in line: # indicator of conversation
+        if "-- -- --" in line: # Conversation titles are indicated by "-- -- --" (opened and closed by them)
+            convdetect = not convdetect # flips the bool
+            continue
+        if convdetect: # indicator of conversation
             if inconvo == True:
+                if lineorders:
+                    convobj["lineorders"] = orderdict[convobj["conversation"]]
                 objectlist.append(convobj)
             convobj = {} # Initialize the conversation object as a dict
             convobj["dialogueLines"] = [] # Initialize dialoguelines as a list
-            convobj["conversation"] = line[2:] # drop the first two characters
+            convobj["conversation"] = line # drop the first two characters
             convobj["convID"] = idcounter
             idcounter += 1
             inconvo = True
             foundinit = False
-        if line in playerids.keys(): # search for name in playerids
+        if line in playerids.keys(): # allows "stage directions" to be ignored & keeps subconvos in one object
             print("Hit!")
             speaker = line
             if foundinit == False:
                 convobj["initiator"] = line
                 foundinit = True
             nextlinedialogue = True
-            continue
+            continue # proceeds to the next step of the for loop & skips everything below
         if nextlinedialogue == True:
             convobj["dialogueLines"].append({
                 linecounter : line,
@@ -53,29 +66,17 @@ with open(sys.argv[1]) as textfile:
                 })
             nextlinedialogue = False
             linecounter += 1
-            print(linecounter)
         if "~" in line: # "~" indicate the end of the .txt file
+            if lineorders:
+                convobj["lineorders"] = orderdict[convobj["conversation"]]
             objectlist.append(convobj)
             print("Ended!")
+
+### Code to get lineorders from a different file
+# Find convo name & then have the different lineorders
+# Add the different lineorders into the dictionary as a dictionary
+# Keep the names of the lineorders.
 
 # Write the .json file
 with open(sys.argv[2], "w") as outfile:
     json.dump(objectlist, outfile)
-
-"""
-Eventually we want an object like 
-{
-    "conversation" : "Name"
-    "convID" : #
-    "initiator" : playerID
-    "dialogueLines" : [
-        {lineID : "line 1"
-        Speaker : "Name"},
-        {lineID : "line 2"
-        Speaker : "Name"},
-        ...
-    ]
-    "lineOrder" : [lineID, lineID, ...]
-}
-for every conversation in the script
-"""
