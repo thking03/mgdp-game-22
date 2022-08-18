@@ -1,7 +1,6 @@
-#!/usr/bin/env p
+#!/usr/bin/env python3
 
 ### Arguments should be inputted (txtfile, .json file name)
-### Need to implement the lineorder part later on.
 
 import json # Use to write to .json
 import sys  # Use so that readtxt.py can be run on commandline with arguments
@@ -26,12 +25,14 @@ nextlinedialogue = False
 convdetect = False
 linecounter = 0
 
-if sys.argv[3]:
-    with open(sys.argv[3]) as f:
-        orderdict = json.load(f)
-    lineorders = True
-
-print(orderdict)
+try:
+    if sys.argv[3]:
+        with open(sys.argv[3]) as f:
+            orderdict = json.load(f)
+        lineorders = True
+except:
+    lineorders = False
+    pass
 
 with open(sys.argv[1]) as textfile:
     for line in textfile:
@@ -66,11 +67,11 @@ with open(sys.argv[1]) as textfile:
                 })
             nextlinedialogue = False
             linecounter += 1
-        if "~" in line: # "~" indicate the end of the .txt file
-            if lineorders:
+    # This executes on exit from the for loop
+    if lineorders:
                 convobj["lineorders"] = orderdict[convobj["conversation"]]
-            objectlist.append(convobj)
-            print("Ended!")
+    objectlist.append(convobj)
+    print("Ended!")
 
 ### Code to get lineorders from a different file
 # Find convo name & then have the different lineorders

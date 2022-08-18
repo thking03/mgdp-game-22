@@ -1,0 +1,360 @@
+ENTR'ACTE ONE
+
+-- -- --
+Pre-Thaddeus Conversations
+-- -- --
+	PLAYER interacts with a TOWNSPERSON.
+
+MAX
+Hey, /Player/. Didn't think you would be back so soon. Thaddeus is probably at his office still.
+
+
+ALEX
+Good evening, /Player/. I think Thaddeus is still at the center of town.
+
+BENNY
+Good to have you back, /Player/! Charlie's going to start pestering you with requests for stories, now that you're returned. It's late, but Thaddeus should still be in his office working.
+
+CHARLIE
+Hi, /Player/! How were the forests? 
+
+TYLER
+Good evening, /Player/. Glad to see you're back. Tommy's disappeared somewhere, but Thaddeus is in the center of town, still. 
+
+TOMMY
+Hey, /Player/. It's so dark outside.
+
+-- -- --
+Thaddeus Conversation 1
+-- -- --
+	PLAYER interacts with THADDEUS
+
+THADDEUS
+Ah, /Player/, good to see you. I heard that you were back in town from your expedition early, and am excited to hear about what you discovered. 
+
+PLAYER
+Good to see you, too, Mayor Thaddeus. 
+
+THADDEUS
+And your partner? Have they come back to town as well?
+
+PLAYER
+That's what I wanted to talk about. We ran into some, uh, issues around the outskirts.
+
+THADDEUS
+I saw the towers had been lit.
+
+PLAYER
+Yes. The storm that we were scouting turned out worse than either of us expected. 
+
+THADDEUS
+And the other lookout?
+
+PLAYER
+They didn't survive, Thaddeus. I'm not sure what happened, but the storm did it. Thunder and lightning and then their whole station cut out.
+
+PLAYER
+We still should have a few days at the pace the storm's been moving.
+
+THADDEUS
+Thank you. I'm still wrapped up here for a couple of hours, so I would appreciate your telling the other townspeople of what's going on. There's been some talk at the towers being lit, but they need to know the severity.
+
+THADDEUS
+And it'll be good since you've only been in town for a few weeks. A few folks might have some things for you to help them with, too--the other lookouts would help around town when they weren't scouting.
+
+THADDEUS
+But these people have know each other a long time, and they've built a community on trust. So show them you care, and they'll help you out however they can.
+
+THADDEUS
+When you're done, come back to me. I'll start thinking about how we'll get through this storm, and I'll have need of you. Good evening, /Player/.
+
+PLAYER
+Good evening, Mayor.
+
+-- -- --
+Max: Activate the Weather detectors
+-- -- --
+	PLAYER interacts with MAX.
+
+MAX
+Hey, /Player/. How are you doing?
+
+PLAYER
+I'm good, Max. Just wanted to let you know that there's a pretty big storm headed this way. Nothing to be concerned about yet, Thaddeus just wanted everyone to have a heads-up.
+
+MAX
+I figured something was off when the towers lit up. Haven't seen that in a few years.
+
+MAX
+So it's a storm you say? Well, if you find yourself afield soon, it might help us to have more data. There's a grid of sensors that have been dead for a few years outside town, but it shouldn't take much to get them running.
+
+PLAYER
+I'll look into it, then.
+
+MAX
+Thanks. Again, you should just need a spark to get them going. Have a good night.
+
+-- -- --
+Tyler: Find Tommy
+-- -- --
+	DEFAULT
+PLAYER interacts with TYLER and has not talked to TOMMY.
+
+PLAYER
+Hey, Tyler. How's it going?
+
+TYLER
+I'm fine. Thanks for stopping by to say hello, but I'm looking for Tommy.
+
+PLAYER
+This won't take long, but Thaddeus wanted me to let you know that there's a storm heading toward town. It's why we lit the towers.
+
+TYLER
+Oh, I didn't notice. Must've been just a few hours ago.
+
+PLAYER
+Yeah. Nothing to worry about for now, but just be aware.
+
+TYLER
+Okay. Thank you. Well, if you're going around town, do you think that you could help look for Tommy? It's been a couple hours and I have no clue where they are.
+
+PLAYER
+I'll keep an eye out and tell them to head home.
+
+TYLER
+Thank you, /Player/. Have a good evening.
+
+	CHECK-IN
+	PLAYER interacts with TYLER after taking the quest.
+
+TYLER
+Good to see you again. Have you heard from Tommy yet?
+
+ALT. (Tommy found first)
+	PLAYER interacts with TYLER and has already talked to TOMMY.
+
+PLAYER
+Hey, Tyler. How's it going?
+
+TYLER
+I'm fine. Thanks for stopping by to say hello, but I'm looking for Tommy.
+
+PLAYER
+Oh! I saw him playing earlier by Town Hall. He asked me to look for a stuffed animal for him.
+
+TYLER
+Oh, great, okay. Can you tell him that they should come home before the sun sets? 
+
+PLAYER
+Yeah, of course.
+
+TYLER
+Thank you so much. Though I'm assuming you didn't stop by to hear me ask about Tommy's whereabouts?
+
+PLAYER
+Yeah, Thaddeus wanted me to stop by and let you know that there's a storm heading toward town. It's why we lit the towers.
+
+TYLER
+Oh, I didn't notice. It must've happened when I was looking for Tommy.
+
+PLAYER
+Yeah. Nothing to worry about for now, but just be aware.
+
+TYLER
+Okay, thanks for letting me know. Have a good evening!
+
+ON FINISH
+	PLAYER interacts with TYLER and has told TOMMY to return.
+
+PLAYER
+Hey, Tyler. Wanted to check in and see if Tommy's returned yet.
+
+TYLER
+Yeah, they arrived a few minutes ago. Thank you so much.
+
+TOMMY
+Hi, /Player/!
+
+PLAYER
+Good to see that you're home safe, Tommy. Have a great night.
+
+-- -- --
+Tommy: Find the stuffed animal
+-- -- --
+DEFAULT	
+PLAYER interacts with TOMMY and hasn't talked to TYLER.
+
+TOMMY
+Hey, /Player/!
+
+PLAYER
+Hey, Tommy! What are you doing out here by yourself?
+
+TOMMY
+I lost my stuffed rabbit and can't find it.
+
+PLAYER
+Sorry, kid. Is it around here somewhere?
+
+TOMMY
+I think so. Do you think you could help?
+
+PLAYER
+I can keep an eye out for it.
+
+TOMMY
+Thank you! Have a good night.
+
+PLAYER
+Good to see you, too, Tommy.
+
+ALT. (Tyler talked to first)
+	PLAYER interacts with TOMMY and has talked to TYLER.
+
+TOMMY
+Hey, /Player/!
+
+PLAYER
+Hey, Tommy! You know that Tyler's looking for you. What are you doing out here by yourself?
+
+TOMMY
+I lost my stuffed rabbit and can't find it.
+
+PLAYER
+Sorry, kid. But you really should get going home. It's getting late.
+
+TOMMY
+I don't want to go home without my rabbit.
+
+PLAYER
+Is it around here somewhere?
+
+TOMMY
+I think so. Do you think you could help?
+
+PLAYER
+I can keep an eye out for it.
+
+TOMMY
+Thank you! Have a good night.
+
+PLAYER
+Good to see you, too, Tommy.
+
+CHECK-IN
+	PLAYER interacts with TOMMY after taking the quest.
+
+
+TYLER
+Hey, /Player/! Have you found my rabbit yet?
+
+ON FINISH
+	PLAYER interacts with TOMMY and has found the stuffed animal.
+
+PLAYER
+Hey, Tommy! Guess what I found!
+
+TOMMY
+My rabbit! Thank you so much!
+
+
+PLAYER
+Of course, kid.
+
+	GO HOME
+	PLAYER interacts with TOMMY, has talked to TYLER, and has found the stuffed animal.
+	Segue from ON FINISH if possible.
+
+PLAYER
+Now that you've found the rabbit, will you come home? Remember, Tyler's been looking for you all afternoon.
+
+TOMMY
+Okay. I'll head there.
+
+PLAYER
+Thanks, Tommy. You're a good kid. Get home safe.
+
+-- -- --
+Charlie: Lightning Bottle
+-- -- --
+
+CHARLIE
+Hey, /Player/! You're back early.
+
+PLAYER
+Hey, Charlie. How're you doing?
+
+CHARLIE
+I'm good! Max has been teaching me and Charlie a lot of things. 
+
+PLAYER
+That's great. Well, I don't know if you've heard already, but there's a storm that should hit in a few days, so you two should be careful playing outside, alright?
+
+CHARLIE
+Okay, we will. But I wish that I could go see it up close like you. It seems so cool! And I could learn so many things from it, like how lightning works, or how rain clouds develop.
+
+PLAYER
+That would be fun, Charlie, but it's not safe. You can still learn all that from Max, indoors.
+
+CHARLIE
+I know. But if you go out there again, could you catch lightning for me?
+
+PLAYER
+What?
+
+CHARLIE
+Yeah! I have this bottle-device that Tommy and I made awhile ago. You just need to set it near something that attracts lightning and -- zap! -- it'll catch it.
+
+PLAYER
+Interesting. Well, I'll see what I can do next time I'm in the field.
+
+CHARLIE
+Thank you so much! This is going to be so cool!
+
+-- -- --
+Post-Thaddeus Conversations
+-- -- --
+
+MAX
+Hey, /Player/. Thanks again for the heads up about the storm, and let me know how activating the detectors goes. Can't wait to see their data.
+
+ALEX
+Hey, /Player/. Thanks for letting me know. You can never prepare enough, you know? Whatever happens, I'm gonna come through it on my feet. Just got to get preparing in the meantime.
+
+BENNY
+Thanks for stopping by, /Player/. I'm not too worried about this storm, though. We've seen worse. I'll try to keep Charlie inside. They're really intrigued by the entire situation, if you can imagine it.
+
+CHARLIE
+Hi! I can't wait to see more of the storm. Through my window, though. And I can't wait to see my lightning-in-a-bottle!
+
+TYLER
+Thanks for finding Tommy, again. And for letting us know about the storm.
+
+TOMMY
+Hi, /Player/! Thank you for finding my rabbit. See you later!
+
+-- -- --
+Thaddeus Conversation 2
+-- -- --
+
+THADDEUS
+Good to see you back, /Player/. I've taken it that you've made the rounds since you've come back. Well, to business then. Since the incident at the Lookout Tower was caused by the storm, we think that we would be best served by your investigating it.
+
+PLAYER
+Is there anything specific I should be looking for?
+
+THADDEUS
+We're not entirely sure. But as long as you can get to the Tower and see if there's anything informative about the area, that will be enough.
+
+PLAYER
+I'll set off at once, then.
+
+THADDEUS
+Great. But if there are things you need to do for people in town, you should finish those up. I'm not sure how long you'll be gone, and people can be impatient.
+
+PLAYER
+Noted.
+
+THADDEUS
+The path back to the Tower is on the far east of town. Hopefully you'll be able to find answers there.
+~

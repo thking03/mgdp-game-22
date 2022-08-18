@@ -1,0 +1,623 @@
+[
+    {
+        "dialogueLines": [
+            {
+                "0": "Hey, /Player/. Didn't think you would be back so soon. Thaddeus is probably at his office still.",
+                "Speaker": "MAX"
+            },
+            {
+                "1": "Good evening, /Player/. I think Thaddeus is still at the center of town.",
+                "Speaker": "ALEX"
+            },
+            {
+                "2": "Good to have you back, /Player/! Charlie's going to start pestering you with requests for stories, now that you're returned. It's late, but Thaddeus should still be in his office working.",
+                "Speaker": "BENNY"
+            },
+            {
+                "3": "Hi, /Player/! How were the forests? ",
+                "Speaker": "CHARLIE"
+            },
+            {
+                "4": "Good evening, /Player/. Glad to see you're back. Tommy's disappeared somewhere, but Thaddeus is in the center of town, still. ",
+                "Speaker": "TYLER"
+            },
+            {
+                "5": "Hey, /Player/. It's so dark outside.",
+                "Speaker": "TOMMY"
+            }
+        ],
+        "conversation": "Pre-Thaddeus Conversations",
+        "convID": 0,
+        "initiator": "MAX",
+        "lineorders": {
+            "type": "default-dialogue",
+            "MAX": [
+                0
+            ],
+            "ALEX": [
+                1
+            ],
+            "BENNY": [
+                2
+            ],
+            "CHARLIE": [
+                3
+            ],
+            "TYLER": [
+                4
+            ],
+            "TOMMY": [
+                5
+            ]
+        }
+    },
+    {
+        "dialogueLines": [
+            {
+                "6": "Ah, /Player/, good to see you. I heard that you were back in town from your expedition early, and am excited to hear about what you discovered. ",
+                "Speaker": "THADDEUS"
+            },
+            {
+                "7": "Good to see you, too, Mayor Thaddeus. ",
+                "Speaker": "PLAYER"
+            },
+            {
+                "8": "And your partner? Have they come back to town as well?",
+                "Speaker": "THADDEUS"
+            },
+            {
+                "9": "That's what I wanted to talk about. We ran into some, uh, issues around the outskirts.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "10": "I saw the towers had been lit.",
+                "Speaker": "THADDEUS"
+            },
+            {
+                "11": "Yes. The storm that we were scouting turned out worse than either of us expected. ",
+                "Speaker": "PLAYER"
+            },
+            {
+                "12": "And the other lookout?",
+                "Speaker": "THADDEUS"
+            },
+            {
+                "13": "They didn't survive, Thaddeus. I'm not sure what happened, but the storm did it. Thunder and lightning and then their whole station cut out.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "14": "We still should have a few days at the pace the storm's been moving.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "15": "Thank you. I'm still wrapped up here for a couple of hours, so I would appreciate your telling the other townspeople of what's going on. There's been some talk at the towers being lit, but they need to know the severity.",
+                "Speaker": "THADDEUS"
+            },
+            {
+                "16": "And it'll be good since you've only been in town for a few weeks. A few folks might have some things for you to help them with, too--the other lookouts would help around town when they weren't scouting.",
+                "Speaker": "THADDEUS"
+            },
+            {
+                "17": "But these people have know each other a long time, and they've built a community on trust. So show them you care, and they'll help you out however they can.",
+                "Speaker": "THADDEUS"
+            },
+            {
+                "18": "When you're done, come back to me. I'll start thinking about how we'll get through this storm, and I'll have need of you. Good evening, /Player/.",
+                "Speaker": "THADDEUS"
+            },
+            {
+                "19": "Good evening, Mayor.",
+                "Speaker": "PLAYER"
+            }
+        ],
+        "conversation": "Thaddeus Conversation 1",
+        "convID": 1,
+        "initiator": "THADDEUS",
+        "lineorders": {
+            "order1": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                1516,
+                17,
+                18,
+                19
+            ]
+        }
+    },
+    {
+        "dialogueLines": [
+            {
+                "20": "Hey, /Player/. How are you doing?",
+                "Speaker": "MAX"
+            },
+            {
+                "21": "I'm good, Max. Just wanted to let you know that there's a pretty big storm headed this way. Nothing to be concerned about yet, Thaddeus just wanted everyone to have a heads-up.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "22": "I figured something was off when the towers lit up. Haven't seen that in a few years.",
+                "Speaker": "MAX"
+            },
+            {
+                "23": "So it's a storm you say? Well, if you find yourself afield soon, it might help us to have more data. There's a grid of sensors that have been dead for a few years outside town, but it shouldn't take much to get them running.",
+                "Speaker": "MAX"
+            },
+            {
+                "24": "I'll look into it, then.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "25": "Thanks. Again, you should just need a spark to get them going. Have a good night.",
+                "Speaker": "MAX"
+            }
+        ],
+        "conversation": "Max: Activate the Weather detectors",
+        "convID": 2,
+        "initiator": "MAX",
+        "lineorders": {
+            "order1": [
+                20,
+                21,
+                22,
+                23,
+                24,
+                25
+            ]
+        }
+    },
+    {
+        "dialogueLines": [
+            {
+                "26": "Hey, Tyler. How's it going?",
+                "Speaker": "PLAYER"
+            },
+            {
+                "27": "I'm fine. Thanks for stopping by to say hello, but I'm looking for Tommy.",
+                "Speaker": "TYLER"
+            },
+            {
+                "28": "This won't take long, but Thaddeus wanted me to let you know that there's a storm heading toward town. It's why we lit the towers.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "29": "Oh, I didn't notice. Must've been just a few hours ago.",
+                "Speaker": "TYLER"
+            },
+            {
+                "30": "Yeah. Nothing to worry about for now, but just be aware.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "31": "Okay. Thank you. Well, if you're going around town, do you think that you could help look for Tommy? It's been a couple hours and I have no clue where they are.",
+                "Speaker": "TYLER"
+            },
+            {
+                "32": "I'll keep an eye out and tell them to head home.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "33": "Thank you, /Player/. Have a good evening.",
+                "Speaker": "TYLER"
+            },
+            {
+                "34": "Good to see you again. Have you heard from Tommy yet?",
+                "Speaker": "TYLER"
+            },
+            {
+                "35": "Hey, Tyler. How's it going?",
+                "Speaker": "PLAYER"
+            },
+            {
+                "36": "I'm fine. Thanks for stopping by to say hello, but I'm looking for Tommy.",
+                "Speaker": "TYLER"
+            },
+            {
+                "37": "Oh! I saw him playing earlier by Town Hall. He asked me to look for a stuffed animal for him.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "38": "Oh, great, okay. Can you tell him that they should come home before the sun sets? ",
+                "Speaker": "TYLER"
+            },
+            {
+                "39": "Yeah, of course.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "40": "Thank you so much. Though I'm assuming you didn't stop by to hear me ask about Tommy's whereabouts?",
+                "Speaker": "TYLER"
+            },
+            {
+                "41": "Yeah, Thaddeus wanted me to stop by and let you know that there's a storm heading toward town. It's why we lit the towers.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "42": "Oh, I didn't notice. It must've happened when I was looking for Tommy.",
+                "Speaker": "TYLER"
+            },
+            {
+                "43": "Yeah. Nothing to worry about for now, but just be aware.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "44": "Okay, thanks for letting me know. Have a good evening!",
+                "Speaker": "TYLER"
+            },
+            {
+                "45": "Hey, Tyler. Wanted to check in and see if Tommy's returned yet.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "46": "Yeah, they arrived a few minutes ago. Thank you so much.",
+                "Speaker": "TYLER"
+            },
+            {
+                "47": "Hi, /Player/!",
+                "Speaker": "TOMMY"
+            },
+            {
+                "48": "Good to see that you're home safe, Tommy. Have a great night.",
+                "Speaker": "PLAYER"
+            }
+        ],
+        "conversation": "Tyler: Find Tommy",
+        "convID": 3,
+        "initiator": "PLAYER",
+        "lineorders": {
+            "order1": [
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33
+            ],
+            "order2": [
+                34
+            ],
+            "order3": [
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44
+            ],
+            "order4": [
+                45,
+                46,
+                47,
+                48
+            ]
+        }
+    },
+    {
+        "dialogueLines": [
+            {
+                "49": "Hey, /Player/!",
+                "Speaker": "TOMMY"
+            },
+            {
+                "50": "Hey, Tommy! What are you doing out here by yourself?",
+                "Speaker": "PLAYER"
+            },
+            {
+                "51": "I lost my stuffed rabbit and can't find it.",
+                "Speaker": "TOMMY"
+            },
+            {
+                "52": "Sorry, kid. Is it around here somewhere?",
+                "Speaker": "PLAYER"
+            },
+            {
+                "53": "I think so. Do you think you could help?",
+                "Speaker": "TOMMY"
+            },
+            {
+                "54": "I can keep an eye out for it.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "55": "Thank you! Have a good night.",
+                "Speaker": "TOMMY"
+            },
+            {
+                "56": "Good to see you, too, Tommy.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "57": "Hey, /Player/!",
+                "Speaker": "TOMMY"
+            },
+            {
+                "58": "Hey, Tommy! You know that Tyler's looking for you. What are you doing out here by yourself?",
+                "Speaker": "PLAYER"
+            },
+            {
+                "59": "I lost my stuffed rabbit and can't find it.",
+                "Speaker": "TOMMY"
+            },
+            {
+                "60": "Sorry, kid. But you really should get going home. It's getting late.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "61": "I don't want to go home without my rabbit.",
+                "Speaker": "TOMMY"
+            },
+            {
+                "62": "Is it around here somewhere?",
+                "Speaker": "PLAYER"
+            },
+            {
+                "63": "I think so. Do you think you could help?",
+                "Speaker": "TOMMY"
+            },
+            {
+                "64": "I can keep an eye out for it.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "65": "Thank you! Have a good night.",
+                "Speaker": "TOMMY"
+            },
+            {
+                "66": "Good to see you, too, Tommy.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "67": "Hey, /Player/! Have you found my rabbit yet?",
+                "Speaker": "TYLER"
+            },
+            {
+                "68": "Hey, Tommy! Guess what I found!",
+                "Speaker": "PLAYER"
+            },
+            {
+                "69": "My rabbit! Thank you so much!",
+                "Speaker": "TOMMY"
+            },
+            {
+                "70": "Of course, kid.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "71": "Now that you've found the rabbit, will you come home? Remember, Tyler's been looking for you all afternoon.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "72": "Okay. I'll head there.",
+                "Speaker": "TOMMY"
+            },
+            {
+                "73": "Thanks, Tommy. You're a good kid. Get home safe.",
+                "Speaker": "PLAYER"
+            }
+        ],
+        "conversation": "Tommy: Find the stuffed animal",
+        "convID": 4,
+        "initiator": "TOMMY",
+        "lineorders": {
+            "order1": [
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56
+            ],
+            "order2": [
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66
+            ],
+            "order3": [
+                67
+            ],
+            "order4": [
+                68,
+                69,
+                70
+            ],
+            "order5": [
+                71,
+                72,
+                73
+            ],
+            "order6": [
+                68,
+                69,
+                70,
+                71,
+                72,
+                73
+            ]
+        }
+    },
+    {
+        "dialogueLines": [
+            {
+                "74": "Hey, /Player/! You're back early.",
+                "Speaker": "CHARLIE"
+            },
+            {
+                "75": "Hey, Charlie. How're you doing?",
+                "Speaker": "PLAYER"
+            },
+            {
+                "76": "I'm good! Max has been teaching me and Charlie a lot of things. ",
+                "Speaker": "CHARLIE"
+            },
+            {
+                "77": "That's great. Well, I don't know if you've heard already, but there's a storm that should hit in a few days, so you two should be careful playing outside, alright?",
+                "Speaker": "PLAYER"
+            },
+            {
+                "78": "Okay, we will. But I wish that I could go see it up close like you. It seems so cool! And I could learn so many things from it, like how lightning works, or how rain clouds develop.",
+                "Speaker": "CHARLIE"
+            },
+            {
+                "79": "That would be fun, Charlie, but it's not safe. You can still learn all that from Max, indoors.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "80": "I know. But if you go out there again, could you catch lightning for me?",
+                "Speaker": "CHARLIE"
+            },
+            {
+                "81": "What?",
+                "Speaker": "PLAYER"
+            },
+            {
+                "82": "Yeah! I have this bottle-device that Tommy and I made awhile ago. You just need to set it near something that attracts lightning and -- zap! -- it'll catch it.",
+                "Speaker": "CHARLIE"
+            },
+            {
+                "83": "Interesting. Well, I'll see what I can do next time I'm in the field.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "84": "Thank you so much! This is going to be so cool!",
+                "Speaker": "CHARLIE"
+            }
+        ],
+        "conversation": "Charlie: Lightning Bottle",
+        "convID": 5,
+        "initiator": "CHARLIE",
+        "lineorders": {
+            "order1": [
+                74,
+                75,
+                76,
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84
+            ]
+        }
+    },
+    {
+        "dialogueLines": [
+            {
+                "85": "Hey, /Player/. Thanks again for the heads up about the storm, and let me know how activating the detectors goes. Can't wait to see their data.",
+                "Speaker": "MAX"
+            },
+            {
+                "86": "Hey, /Player/. Thanks for letting me know. You can never prepare enough, you know? Whatever happens, I'm gonna come through it on my feet. Just got to get preparing in the meantime.",
+                "Speaker": "ALEX"
+            },
+            {
+                "87": "Thanks for stopping by, /Player/. I'm not too worried about this storm, though. We've seen worse. I'll try to keep Charlie inside. They're really intrigued by the entire situation, if you can imagine it.",
+                "Speaker": "BENNY"
+            },
+            {
+                "88": "Hi! I can't wait to see more of the storm. Through my window, though. And I can't wait to see my lightning-in-a-bottle!",
+                "Speaker": "CHARLIE"
+            },
+            {
+                "89": "Thanks for finding Tommy, again. And for letting us know about the storm.",
+                "Speaker": "TYLER"
+            },
+            {
+                "90": "Hi, /Player/! Thank you for finding my rabbit. See you later!",
+                "Speaker": "TOMMY"
+            }
+        ],
+        "conversation": "Post-Thaddeus Conversations",
+        "convID": 6,
+        "initiator": "MAX",
+        "lineorders": {
+            "type": "default-dialogue",
+            "MAX": [
+                85
+            ],
+            "ALEX": [
+                86
+            ],
+            "BENNY": [
+                87
+            ],
+            "CHARLIE": [
+                88
+            ],
+            "TYLER": [
+                89
+            ],
+            "TOMMY": [
+                90
+            ]
+        }
+    },
+    {
+        "dialogueLines": [
+            {
+                "91": "Good to see you back, /Player/. I've taken it that you've made the rounds since you've come back. Well, to business then. Since the incident at the Lookout Tower was caused by the storm, we think that we would be best served by your investigating it.",
+                "Speaker": "THADDEUS"
+            },
+            {
+                "92": "Is there anything specific I should be looking for?",
+                "Speaker": "PLAYER"
+            },
+            {
+                "93": "We're not entirely sure. But as long as you can get to the Tower and see if there's anything informative about the area, that will be enough.",
+                "Speaker": "THADDEUS"
+            },
+            {
+                "94": "I'll set off at once, then.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "95": "Great. But if there are things you need to do for people in town, you should finish those up. I'm not sure how long you'll be gone, and people can be impatient.",
+                "Speaker": "THADDEUS"
+            },
+            {
+                "96": "Noted.",
+                "Speaker": "PLAYER"
+            },
+            {
+                "97": "The path back to the Tower is on the far east of town. Hopefully you'll be able to find answers there.",
+                "Speaker": "THADDEUS"
+            }
+        ],
+        "conversation": "Thaddeus Conversation 2",
+        "convID": 7,
+        "initiator": "THADDEUS",
+        "lineorders": {
+            "order1": [
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                97
+            ]
+        }
+    }
+]
