@@ -84,22 +84,22 @@ public class PlayerControl : MonoBehaviour
             transform.position += dir;
         } else
         {
-            if(Input.GetButtonDown("Right") && checkMoveable(new Vector3(0, 0, -1)))
+            if(Input.GetButtonDown("Down") && checkMoveable(new Vector3(0, 0, -1)))
             {
                 transform.position += new Vector3(0, 0, -1);
                 transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
             }
-            if (Input.GetButtonDown("Left") && checkMoveable(new Vector3(0, 0, 1)))
+            if (Input.GetButtonDown("Up") && checkMoveable(new Vector3(0, 0, 1)))
             {
                 transform.position += new Vector3(0, 0, 1);
                 transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
             }
-            if (Input.GetButtonDown("Up") && checkMoveable(new Vector3(1, 0, 0)))
+            if (Input.GetButtonDown("Right") && checkMoveable(new Vector3(1, 0, 0)))
             {
                 transform.position += new Vector3(1, 0, 0);
                 transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
             }
-            if (Input.GetButtonDown("Down") && checkMoveable(new Vector3(-1, 0, 0)))
+            if (Input.GetButtonDown("Left") && checkMoveable(new Vector3(-1, 0, 0)))
             {
                 transform.position += new Vector3(-1, 0, 0);
                 transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
