@@ -62,7 +62,8 @@ with open(sys.argv[1]) as textfile:
             continue # proceeds to the next step of the for loop & skips everything below
         if nextlinedialogue == True:
             convobj["dialogueLines"].append({
-                linecounter : line,
+                "lineID" : linecounter,
+                "Text" : line,
                 "Speaker" : speaker
                 })
             nextlinedialogue = False
