@@ -17,7 +17,7 @@ public class CameraPanChapters : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startLevelX = 198;
+        startLevelX = 186;
         initialY = player.transform.position.y + 3;
 
         Camera.main.transform.position = new Vector3(startLevelX, initialY + 3, -10);
@@ -76,7 +76,7 @@ public class CameraPanChapters : MonoBehaviour
             if (Camera.main.orthographic)
             {
                 //vals for mathf.clamp determined by boundaries of scene, rn (8-11) set so that it's boundaries +- 9ish
-                Camera.main.transform.position = new Vector3(Mathf.Clamp(player.transform.position.x, 4.5f, 9.5f), camY, -10);
+                Camera.main.transform.position = new Vector3(Mathf.Clamp(player.transform.position.x, 4.5f, 190f), camY, -10);
             }
             else
             {
