@@ -47,7 +47,7 @@ public class CameraPanIntro : MonoBehaviour
         if(Camera.main.orthographic)
         {
             //vals for mathf.clamp determined by boundaries of scene
-            Camera.main.transform.position = new Vector3(Mathf.Clamp(player.transform.position.x,-1f,14f), camY, -10);
+            Camera.main.transform.position = new Vector3(Mathf.Clamp(player.transform.position.x,-1f,13.5f), camY, -10);
         }
         else
         {

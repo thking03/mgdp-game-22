@@ -22,72 +22,122 @@ public class Tower1Light : MonoBehaviour
     public GameObject towerBlock11;
     public GameObject towerBlock12;
 
+    public GameObject litBlock;
+    public GameObject litBlock2;
+    public GameObject litBlock3;
+    public GameObject litBlock4;
+    public GameObject litBlock5;
+    public GameObject litBlock6;
+    public GameObject litBlock7;
+    public GameObject litBlock8;
+    public GameObject litBlock9;
+    public GameObject litBlock10;
+    public GameObject litBlock11;
+    public GameObject litBlock12;
+
+
     public bool isStarted = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        towerBlock.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock2.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock3.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock4.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock5.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock6.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock7.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock8.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock9.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock10.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock11.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock12.GetComponent<MeshRenderer>().material = unlit;
+        towerBlock.SetActive(true);
+        towerBlock2.SetActive(true);
+        towerBlock3.SetActive(true);
+        towerBlock4.SetActive(true);
+        towerBlock5.SetActive(true);
+        towerBlock6.SetActive(true);
+        towerBlock7.SetActive(true);
+        towerBlock8.SetActive(true);
+        towerBlock9.SetActive(true);
+        towerBlock10.SetActive(true);
+        towerBlock11.SetActive(true);
+        towerBlock12.SetActive(true);
+
+        litBlock.SetActive(false);
+        litBlock2.SetActive(false);
+        litBlock3.SetActive(false);
+        litBlock4.SetActive(false);
+        litBlock5.SetActive(false);
+        litBlock6.SetActive(false);
+        litBlock7.SetActive(false);
+        litBlock8.SetActive(false);
+        litBlock9.SetActive(false);
+        litBlock10.SetActive(false);
+        litBlock11.SetActive(false);
+        litBlock12.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if((Vector3.Distance(player.transform.position,towerBlock.transform.position) <= 2) && !isStarted)
+
+        if ((Vector3.Distance(player.transform.position, towerBlock.transform.position) <= 2) && !isStarted)
         {
             isStarted = true;
             StartCoroutine(lightUp());
-            
-
         }
     }
 
     IEnumerator lightUp()
     {
-        towerBlock.GetComponent<MeshRenderer>().material = litUp;
+        //towerBlock.SetActive(false);
+        litBlock.SetActive(true);
+        Debug.Log("hi");
         yield return new WaitForSeconds(0.03f);
-        towerBlock.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock2.GetComponent<MeshRenderer>().material = litUp;
+        Debug.Log("hi again");
+        towerBlock.SetActive(true);
+        litBlock.SetActive(false);
+        towerBlock2.SetActive(false);
+        litBlock2.SetActive(true);
+        Debug.Log("hi again again");
         yield return new WaitForSeconds(0.03f);
-        towerBlock2.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock3.GetComponent<MeshRenderer>().material = litUp;
+        towerBlock2.SetActive(true);
+        litBlock2.SetActive(false);
+        towerBlock3.SetActive(false);
+        litBlock3.SetActive(true);
         yield return new WaitForSeconds(0.03f);
-        towerBlock3.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock4.GetComponent<MeshRenderer>().material = litUp;
+        towerBlock3.SetActive(true);
+        litBlock3.SetActive(false);
+        towerBlock4.SetActive(false);
+        litBlock4.SetActive(true);
         yield return new WaitForSeconds(0.03f);
-        towerBlock4.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock5.GetComponent<MeshRenderer>().material = litUp;
+        towerBlock4.SetActive(true);
+        litBlock4.SetActive(false);
+        towerBlock5.SetActive(false);
+        litBlock5.SetActive(true);
         yield return new WaitForSeconds(0.03f);
-        towerBlock5.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock6.GetComponent<MeshRenderer>().material = litUp;
+        towerBlock5.SetActive(true);
+        litBlock5.SetActive(false);
+        towerBlock6.SetActive(false);
+        litBlock6.SetActive(true);
         yield return new WaitForSeconds(0.03f);
-        towerBlock6.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock7.GetComponent<MeshRenderer>().material = litUp;
+        towerBlock6.SetActive(true);
+        litBlock6.SetActive(false);
+        towerBlock7.SetActive(false);
+        litBlock7.SetActive(true);
         yield return new WaitForSeconds(0.03f);
-        towerBlock7.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock8.GetComponent<MeshRenderer>().material = litUp;
+        towerBlock7.SetActive(true);
+        litBlock7.SetActive(false);
+        towerBlock8.SetActive(false);
+        litBlock8.SetActive(true);
         yield return new WaitForSeconds(0.03f);
-        towerBlock8.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock9.GetComponent<MeshRenderer>().material = litUp;
+        towerBlock8.SetActive(true);
+        litBlock8.SetActive(false);
+        towerBlock9.SetActive(false);
+        litBlock9.SetActive(true);
         yield return new WaitForSeconds(0.03f);
-        towerBlock9.GetComponent<MeshRenderer>().material = unlit;
-        towerBlock10.GetComponent<MeshRenderer>().material = litUp;
+        towerBlock9.SetActive(true);
+        litBlock9.SetActive(false);
+        towerBlock10.SetActive(false);
+        litBlock10.SetActive(true);
         yield return new WaitForSeconds(0.03f);
-        towerBlock11.GetComponent<MeshRenderer>().material = litUp;
+        towerBlock11.SetActive(false);
+        litBlock11.SetActive(true);
         yield return new WaitForSeconds(0.03f);
-        towerBlock12.GetComponent<MeshRenderer>().material = litUp;
+        towerBlock12.SetActive(false);
+        litBlock12.SetActive(true);
     }
 
 }
