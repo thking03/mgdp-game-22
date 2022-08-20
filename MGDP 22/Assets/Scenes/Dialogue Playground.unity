@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 684355037}
   - component: {fileID: 684355042}
   - component: {fileID: 684355041}
+  - component: {fileID: 684355043}
   m_Layer: 0
   m_Name: Speaker
   m_TagString: Untagged
@@ -331,25 +332,26 @@ MonoBehaviour:
     "LOOKOUT"}, {"lineID": 6, "Text": "Got it. I''ll radio when it''s done.", "Speaker":
     "PLAYER"}, {"lineID": 7, "Text": "Thanks, kid. See you on the other side, then.",
     "Speaker": "LOOKOUT"}], "conversation": "First Lookout''s Conversation", "convID":
-    0, "initiator": "LOOKOUT", "lineorders": [[0, 1, 2, 3, 4, 5, 6, 7]]}, {"dialogueLines":
-    [{"lineID": 8, "Text": "It''s gotten chillier since I left, but that''s the last
-    one lit. ", "Speaker": "PLAYER"}, {"lineID": 9, "Text": "This is /Player/, calling
-    in. Warning towers are lit, and I''m headed back to the Lookout. Over.", "Speaker":
-    "PLAYER"}, {"lineID": 10, "Text": "Roger, kid. But head back into town. It''s
-    getting dicey out here and you''ve been out for a week.", "Speaker": "LOOKOUT"},
-    {"lineID": 11, "Text": "You sure you''ll be fine by yourself?", "Speaker": "PLAYER"},
-    {"lineID": 12, "Text": "I''ve been monitoring this land for twice as long as
-    you''ve been alive. No need to worry about me.", "Speaker": "LOOKOUT"}, {"lineID":
-    13, "Text": "Fine. But I''m coming out first thing in the morning.", "Speaker":
-    "PLAYER"}, {"lineID": 14, "Text": "Of course, kid, I wouldn''t expect anything
-    less. G''night. I''ll see you in the--", "Speaker": "LOOKOUT"}, {"lineID": 15,
-    "Text": "What''s going on?", "Speaker": "PLAYER"}, {"lineID": 16, "Text": "Worse
-    than -- thought -- go back and tell Mayor -- ", "Speaker": "LOOKOUT"}, {"lineID":
-    17, "Text": "I''m not leaving you out there. I can be there in thirty minutes
-    and then--", "Speaker": "PLAYER"}, {"lineID": 18, "Text": "No, kid, let me --
-    make sure you tell -- worse --", "Speaker": "LOOKOUT"}], "conversation": "Second
-    Lookout''s Conversation", "convID": 1, "initiator": "PLAYER", "lineorders": [[8,
-    9, 10, 11, 12, 13, 14, 15, 16, 17, 18]]}]'
+    0, "initiator": "LOOKOUT", "lineorders": {"type": "", "orders": [[0, 1, 2, 3,
+    4, 5, 6, 7]]}}, {"dialogueLines": [{"lineID": 8, "Text": "It''s gotten chillier
+    since I left, but that''s the last one lit. ", "Speaker": "PLAYER"}, {"lineID":
+    9, "Text": "This is /Player/, calling in. Warning towers are lit, and I''m headed
+    back to the Lookout. Over.", "Speaker": "PLAYER"}, {"lineID": 10, "Text": "Roger,
+    kid. But head back into town. It''s getting dicey out here and you''ve been out
+    for a week.", "Speaker": "LOOKOUT"}, {"lineID": 11, "Text": "You sure you''ll
+    be fine by yourself?", "Speaker": "PLAYER"}, {"lineID": 12, "Text": "I''ve been
+    monitoring this land for twice as long as you''ve been alive. No need to worry
+    about me.", "Speaker": "LOOKOUT"}, {"lineID": 13, "Text": "Fine. But I''m coming
+    out first thing in the morning.", "Speaker": "PLAYER"}, {"lineID": 14, "Text":
+    "Of course, kid, I wouldn''t expect anything less. G''night. I''ll see you in
+    the--", "Speaker": "LOOKOUT"}, {"lineID": 15, "Text": "What''s going on?", "Speaker":
+    "PLAYER"}, {"lineID": 16, "Text": "Worse than -- thought -- go back and tell
+    Mayor -- ", "Speaker": "LOOKOUT"}, {"lineID": 17, "Text": "I''m not leaving you
+    out there. I can be there in thirty minutes and then--", "Speaker": "PLAYER"},
+    {"lineID": 18, "Text": "No, kid, let me -- make sure you tell -- worse --", "Speaker":
+    "LOOKOUT"}], "conversation": "Second Lookout''s Conversation", "convID": 1, "initiator":
+    "PLAYER", "lineorders": {"type": "", "orders": [[8, 9, 10, 11, 12, 13, 14, 15,
+    16, 17, 18]]}}]'
   playerName: Lily Bloom
 --- !u!114 &684355042
 MonoBehaviour:
@@ -363,14 +365,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d615e59f59d05e541a0f4168d73752b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sentences: []
-  speaker: 
-  speakerSprite: []
-  speakerName: []
+  thisSpeaker: LOOKOUT
+  accesibleConvs: []
+  convlock: 0
+  convnum: 0
   characterName: {fileID: 0}
   dialogue: {fileID: 0}
   playerSprite: {fileID: 0}
   typeSpeed: 0
+  isInteractable: 0
+--- !u!65 &684355043
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684355036}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &739148466
 GameObject:
   m_ObjectHideFlags: 0

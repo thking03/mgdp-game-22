@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 public class LoadScript : MonoBehaviour
 {
     public string jsonFile;
-    public Dictionary<string,Conversation> scenedialogue = new Dictionary<string, Conversation>();
+    public static Dictionary<string,Conversation> scenedialogue = new Dictionary<string, Conversation>();
     public string playerName;
 
     // Start is called before the first frame update
@@ -27,8 +27,8 @@ public class LoadScript : MonoBehaviour
                     int lID = line["lineID"]; // see above w/ adding to dict.
                     dialogueLine dLine = new dialogueLine();
                     dLine.dialogueText = line["Text"];
-                    dLine.dialogueText.Replace("/Player/", playerName);
-                        // replace /Player/ with the Player's name
+                    dLine.dialogueText = dLine.dialogueText.Replace("/Player/", playerName);
+                    // replace /Player/ with the Player's name
                     dLine.speaker = line["Speaker"];
                     currentConv.dialogueLines.Add(lID, dLine);
                 }
