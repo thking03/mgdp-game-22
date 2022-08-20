@@ -172,7 +172,7 @@ public class PlayerControl : MonoBehaviour
             }
         }
 
-        if((transform.position + loc).z < 0 || (transform.position + loc).z > 25 || (transform.position + loc).x < -14)
+        if((transform.position + loc).z < -2 || (transform.position + loc).z > 25 || (transform.position + loc).x < -14)
         {
             return false;
         }
