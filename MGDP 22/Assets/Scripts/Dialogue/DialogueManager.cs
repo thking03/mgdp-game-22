@@ -48,7 +48,7 @@ public class DialogueManager : MonoBehaviour
     {
         GC.KeepAlive(dialogue);
 
-        if (isInteractable && Input.GetKeyDown(KeyCode.Space) && !convlock)
+        if (isInteractable && Input.GetKeyDown(KeyCode.E) && !convlock)
         {
             getConvo(accesibleConvs[convnum]);
             order = stagedConv.lineorders.orderlist[whichOrder];
@@ -56,7 +56,7 @@ public class DialogueManager : MonoBehaviour
             nextTurn(); // run first part of convo
         }
         
-        if (convlock && Input.GetKeyDown(KeyCode.Space) && !isTyping)
+        if (convlock && Input.GetKeyDown(KeyCode.E) && !isTyping)
         {
             // reinitialize display ??
             textDisplay = GameObject.Find("TextDisplay"); // get the display canvas gameobject
