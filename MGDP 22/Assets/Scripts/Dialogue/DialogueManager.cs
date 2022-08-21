@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -9,13 +10,15 @@ public class DialogueManager : MonoBehaviour
     public List<string> accesibleConvs = new List<string>(); // which convos can be accessed by this speaker
     public LoadScript.Conversation stagedConv = new LoadScript.Conversation(); // conversation currently playing
     public bool convlock = false;
+    public bool isTyping = false;
     public int convnum = 0;
 
     public Dictionary<string,Sprite> speakerSprite;
     private int turn = -1;
 
-    public Text characterName;
-    public Text dialogue;
+    public GameObject textDisplay;
+    public TextMeshProUGUI characterName;
+    public TextMeshProUGUI dialogue;
     public Image playerSprite;
 
     private string txt;
@@ -26,8 +29,17 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         discoverConvos();
-    }
 
+        // initialize the text display
+        textDisplay = GameObject.Find("TextDisplay"); // get the display canvas gameobject
+        GameObject dialogueDisplay = textDisplay.transform.GetChild(0).gameObject;
+        dialogue = dialogueDisplay.GetComponent<TextMeshProUGUI>(); 
+        print(textDisplay);
+        print(dialogueDisplay);
+        print(dialogue);
+        //characterName = textDisplay.GetComponents<GameObject>()[1]; // character name is second
+
+    }
     private void Update()
     {
         if (isInteractable && Input.GetKeyDown(KeyCode.Space) && !convlock)
@@ -37,9 +49,13 @@ public class DialogueManager : MonoBehaviour
             convlock = true;
             nextTurn(); // run first part of convo
         }
-
-        if (convlock && Input.GetKeyDown(KeyCode.Space))
+        
+        if (convlock && Input.GetKeyDown(KeyCode.Space) && !isTyping)
         {
+            // reinitialize display ??
+            textDisplay = GameObject.Find("TextDisplay"); // get the display canvas gameobject
+            GameObject dialogueDisplay = textDisplay.transform.GetChild(0).gameObject;
+            dialogue = dialogueDisplay.GetComponent<TextMeshProUGUI>();
             nextTurn(); // run next part of convo
         }
     }
@@ -69,22 +85,32 @@ public class DialogueManager : MonoBehaviour
     public void nextTurn()
     {
         turn++;
-        txt = stagedConv.dialogueLines[turn].dialogueText;
-        Debug.Log(txt);
-        print(stagedConv.dialogueLines[turn].speaker);
-        // characterName.text = stagedConv.dialogueLines[turn].speaker;
-        // playerSprite.sprite = speakerSprite[stagedConv.dialogueLines[turn].speaker];
-        StartCoroutine(type());
+       try
+        {
+            txt = stagedConv.dialogueLines[turn].dialogueText;
+            Debug.Log(txt);
+            // characterName.text = stagedConv.dialogueLines[turn].speaker;
+            // playerSprite.sprite = speakerSprite[stagedConv.dialogueLines[turn].speaker];
+            StartCoroutine(type());
+        }
+        catch (KeyNotFoundException)
+        {
+            txt = "";
+            StartCoroutine(type());
+            turn = -1;
+        }
     }
 
     IEnumerator type()
     {
+        isTyping = true;
         dialogue.text = "";
         foreach (char letter in txt.ToCharArray())
         {
             dialogue.text += letter;
             yield return new WaitForSeconds(typeSpeed);
         }
+        isTyping = false;
     }
     private void OnTriggerEnter(Collider other)
     {
