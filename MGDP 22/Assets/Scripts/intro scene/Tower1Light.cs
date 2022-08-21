@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Tower1Light : MonoBehaviour
 {
+    public bool lastScene = false;
+    public GameManager2 manage;
+
     public GameObject player;
     public GameObject towerBlock;
     public Material unlit;
@@ -138,6 +141,11 @@ public class Tower1Light : MonoBehaviour
         yield return new WaitForSeconds(0.03f);
         towerBlock12.SetActive(false);
         litBlock12.SetActive(true);
+
+        if(lastScene)
+        {
+            manage.showEnd();
+        }
     }
 
 }

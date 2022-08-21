@@ -51,6 +51,7 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(OnGround());
         if (inTwoD)
         {
             //Interactability
