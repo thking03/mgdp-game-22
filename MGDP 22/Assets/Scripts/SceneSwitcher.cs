@@ -30,5 +30,12 @@ public class SceneSwitcher : MonoBehaviour
                 SceneManager.LoadScene(sceneName: "npc town");
             }
         }
+        else if(currentScene.name == "npc town")
+        {
+            if(player.transform.position.x > 168)
+            {
+                SceneManager.LoadScene(sceneName: "chapter 1");
+            }
+        }
     }
 }

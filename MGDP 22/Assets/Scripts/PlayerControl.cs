@@ -51,6 +51,7 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(OnGround());
         if (inTwoD)
         {
             //Interactability
@@ -84,22 +85,22 @@ public class PlayerControl : MonoBehaviour
             transform.position += dir;
         } else
         {
-            if(Input.GetButtonDown("Right") && checkMoveable(new Vector3(0, 0, -1)))
+            if(Input.GetButtonDown("Down") && checkMoveable(new Vector3(0, 0, -1)))
             {
                 transform.position += new Vector3(0, 0, -1);
                 transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
             }
-            if (Input.GetButtonDown("Left") && checkMoveable(new Vector3(0, 0, 1)))
+            if (Input.GetButtonDown("Up") && checkMoveable(new Vector3(0, 0, 1)))
             {
                 transform.position += new Vector3(0, 0, 1);
                 transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
             }
-            if (Input.GetButtonDown("Up") && checkMoveable(new Vector3(1, 0, 0)))
+            if (Input.GetButtonDown("Right") && checkMoveable(new Vector3(1, 0, 0)))
             {
                 transform.position += new Vector3(1, 0, 0);
                 transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
             }
-            if (Input.GetButtonDown("Down") && checkMoveable(new Vector3(-1, 0, 0)))
+            if (Input.GetButtonDown("Left") && checkMoveable(new Vector3(-1, 0, 0)))
             {
                 transform.position += new Vector3(-1, 0, 0);
                 transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
@@ -172,7 +173,7 @@ public class PlayerControl : MonoBehaviour
             }
         }
 
-        if((transform.position + loc).z < 0 || (transform.position + loc).z > 25 || (transform.position + loc).x < -14)
+        if((transform.position + loc).z < -2 || (transform.position + loc).z > 25 || (transform.position + loc).x < -14)
         {
             return false;
         }

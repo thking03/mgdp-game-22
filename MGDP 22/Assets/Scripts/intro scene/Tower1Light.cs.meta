@@ -3,7 +3,34 @@ guid: 3baf9ea78c78c4c378b0983e25858ce7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - towerBlock: {instanceID: 0}
+  - unlit: {instanceID: 0}
+  - litUp: {instanceID: 0}
+  - towerBlock2: {instanceID: 0}
+  - towerBlock3: {instanceID: 0}
+  - towerBlock4: {instanceID: 0}
+  - towerBlock5: {instanceID: 0}
+  - towerBlock6: {instanceID: 0}
+  - towerBlock7: {instanceID: 0}
+  - towerBlock8: {instanceID: 0}
+  - towerBlock9: {instanceID: 0}
+  - towerBlock10: {instanceID: 0}
+  - towerBlock11: {instanceID: 0}
+  - towerBlock12: {instanceID: 0}
+  - litBlock: {instanceID: 0}
+  - litBlock2: {instanceID: 0}
+  - litBlock3: {instanceID: 0}
+  - litBlock4: {instanceID: 0}
+  - litBlock5: {instanceID: 0}
+  - litBlock6: {instanceID: 0}
+  - litBlock7: {instanceID: 0}
+  - litBlock8: {instanceID: 0}
+  - litBlock9: {instanceID: 0}
+  - litBlock10: {instanceID: 0}
+  - litBlock11: {instanceID: 0}
+  - litBlock12: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
