@@ -50,6 +50,7 @@ public class DialogueManager : MonoBehaviour
 
         if (isInteractable && Input.GetKeyDown(KeyCode.Space) && !convlock)
         {
+            getConvo(accesibleConvs[convnum]);
             order = stagedConv.lineorders.orderlist[whichOrder];
             convlock = true;
             nextTurn(); // run first part of convo
@@ -129,6 +130,36 @@ public class DialogueManager : MonoBehaviour
         }
         isTyping = false;
     }
+
+    public void advanceConv()
+    {
+        if (thisSpeaker == "THADDEUS")
+        {
+            // after speaking to thaddeus once advance to the next conversation
+            convnum++;
+        }
+        if (thisSpeaker == "MAX")
+        {
+            // after speaking to max reset
+            // mark that max was spoken to
+        }
+        if (thisSpeaker == "TOMMY")
+        {
+            // look at the map
+            // mark that tommy was spoken to
+        }
+        if (thisSpeaker == "TYLER")
+        {
+            // look at the map
+            // mark that tyler was spoken to
+        }
+        if (thisSpeaker == "CHARLIE")
+        {
+            // after speaking to charlie reset
+            // mark that charlie was spoken to
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         discoverConvos();
