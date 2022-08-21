@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2071553736348235550}
   - component: {fileID: 4243844937839186645}
   - component: {fileID: 4680903826236013222}
+  - component: {fileID: 1766693667990519877}
+  - component: {fileID: 5575057927998402722}
   m_Layer: 0
   m_Name: lookout
   m_TagString: Untagged
@@ -106,6 +108,96 @@ MonoBehaviour:
   decisionTime: {x: 1, y: 4}
   xMin: 0
   xMax: 0
+--- !u!114 &1766693667990519877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8189320836373002209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d615e59f59d05e541a0f4168d73752b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisSpeaker: LOOKOUT
+  convlock: 0
+  isTyping: 0
+  textDisplay: {fileID: 0}
+  nameDisplay: {fileID: 0}
+  characterName: {fileID: 0}
+  dialogue: {fileID: 0}
+  typeSpeed: 0
+  isInteractable: 0
+--- !u!114 &5575057927998402722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8189320836373002209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9593d75489c01544be4e4c2a9ea020e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonFile: '[     {         "dialogueLines": [             {                 "lineID":
+    0,                 "Text": "Hey, /Player/. Good to see you. Glad you got my message.",                
+    "Speaker": "LOOKOUT"             },             {                 "lineID": 1,                
+    "Text": "What''s happening? You said you saw something to the west?",                
+    "Speaker": "PLAYER"             },             {                 "lineID": 2,                
+    "Text": "Yeah. The clouds on the horizon seem darker than the thunderheads above
+    us right now. I''m not sure what''s going on yet, but they don''t look good.",                
+    "Speaker": "LOOKOUT"             },             {                 "lineID": 3,                
+    "Text": "Any word from the town?",                 "Speaker": "PLAYER"            
+    },             {                 "lineID": 4,                 "Text": "Not yet.
+    They probably don''t know. ",                 "Speaker": "LOOKOUT"            
+    },             {                 "lineID": 5,                 "Text": "Anyway,
+    I wanted you here because I needed someone to light the warning towers. We don''t
+    want anyone getting caught in whatever''s coming, and I''ve got to stay here
+    to monitor everything.",                 "Speaker": "LOOKOUT"             },            
+    {                 "lineID": 6,                 "Text": "Got it. I''ll radio when
+    it''s done.",                 "Speaker": "PLAYER"             },            
+    {                 "lineID": 7,                 "Text": "Thanks, kid. See you
+    on the other side, then.",                 "Speaker": "LOOKOUT"             }        
+    ],         "conversation": "First Lookout''s Conversation",         "convID":
+    0,         "initiator": "LOOKOUT",         "lineorders": {             "type":
+    "",             "orders": [                 [                     0,                    
+    1,                     2,                     3,                     4,                    
+    5,                     6,                     7                 ]            
+    ]         }     },     {         "dialogueLines": [             {                
+    "lineID": 8,                 "Text": "It''s gotten chillier since I left, but
+    that''s the last one lit. ",                 "Speaker": "PLAYER"            
+    },             {                 "lineID": 9,                 "Text": "This is
+    /Player/, calling in. Warning towers are lit, and I''m headed back to the Lookout.
+    Over.",                 "Speaker": "PLAYER"             },             {                
+    "lineID": 10,                 "Text": "Roger, kid. But head back into town. It''s
+    getting dicey out here and you''ve been out for a week.",                 "Speaker":
+    "LOOKOUT"             },             {                 "lineID": 11,                
+    "Text": "You sure you''ll be fine by yourself?",                 "Speaker": "PLAYER"            
+    },             {                 "lineID": 12,                 "Text": "I''ve
+    been monitoring this land for twice as long as you''ve been alive. No need to
+    worry about me.",                 "Speaker": "LOOKOUT"             },            
+    {                 "lineID": 13,                 "Text": "Fine. But I''m coming
+    out first thing in the morning.",                 "Speaker": "PLAYER"            
+    },             {                 "lineID": 14,                 "Text": "Of course,
+    kid, I wouldn''t expect anything less. G''night. I''ll see you in the--",                
+    "Speaker": "LOOKOUT"             },             {                 "lineID": 15,                
+    "Text": "What''s going on?",                 "Speaker": "PLAYER"            
+    },             {                 "lineID": 16,                 "Text": "Worse
+    than -- thought -- go back and tell Mayor -- ",                 "Speaker": "LOOKOUT"            
+    },             {                 "lineID": 17,                 "Text": "I''m
+    not leaving you out there. I can be there in thirty minutes and then--",                
+    "Speaker": "PLAYER"             },             {                 "lineID": 18,                
+    "Text": "No, kid, let me -- make sure you tell -- worse --",                
+    "Speaker": "LOOKOUT"             }         ],         "conversation": "Second
+    Lookout''s Conversation",         "convID": 1,         "initiator": "PLAYER",        
+    "lineorders": {             "type": "",             "orders": [                
+    [                     8,                     9,                     10,                    
+    11,                     12,                     13,                     14,                    
+    15,                     16,                     17,                     18                
+    ]             ]         }     } ]'
+  playerName: Lilly Bloom
 --- !u!1001 &3944351834275165724
 PrefabInstance:
   m_ObjectHideFlags: 0
