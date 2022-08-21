@@ -41,13 +41,26 @@ public class LoadScript : MonoBehaviour
             lineOrders lOrders = new lineOrders();
             if (conv.lineorders.type == "default-dialogue") // this property isn't defined if it's not true
             {
-                foreach (var entry in conv.lineorders)
+                /* foreach (var entry in conv.lineorders)
                 {
-                    if (entry.Key != "type")
+                    try
                     {
-                        lOrders.villagerLines.Add(entry.Key, entry.Value);
+                        if (entry.Key != "type")
+                        {
+                            List<int> lineID = entry.Value;
+                            lOrders.villagerLines.Add(entry.Key, entry.Value);
+                        }
                     }
-                }
+                    catch
+                    {
+                        if (entry.Name != "type")
+                        {
+                            print(entry.Value);
+                            List<int> lineID = entry.Value.CastTo(List<int>);
+                            lOrders.villagerLines.Add(entry.Name, lineID);
+                        }
+                    }
+                }*/ 
                 
             }
             else

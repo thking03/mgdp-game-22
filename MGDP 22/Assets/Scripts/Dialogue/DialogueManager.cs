@@ -9,21 +9,19 @@ using System;
 public class DialogueManager : MonoBehaviour
 {
     public string thisSpeaker; // who this is assigned to
-    public List<string> accesibleConvs = new List<string>(); // which convos can be accessed by this speaker
-    public LoadScript.Conversation stagedConv = new LoadScript.Conversation(); // conversation currently playing
+    private List<string> accesibleConvs = new List<string>(); // which convos can be accessed by this speaker
+    private LoadScript.Conversation stagedConv = new LoadScript.Conversation(); // conversation currently playing
     public bool convlock = false;
     public bool isTyping = false;
-    public int convnum = 0;
-
-    public Dictionary<string,Sprite> speakerSprite;
+    private int convnum = 0;
     private int turn = -1;
 
     public GameObject textDisplay;
     public GameObject nameDisplay;
     public TextMeshProUGUI characterName;
     public TextMeshProUGUI dialogue;
-    public List<int> order;
-    public int whichOrder = 0; // can be set to not 0 if other conditions are met
+    private List<int> order;
+    private int whichOrder = 0; // can be set to not 0 if other conditions are met
 
     private string txt;
 
@@ -32,8 +30,6 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        discoverConvos();
-
         // initialize the text display
         textDisplay = GameObject.Find("TextDisplay"); // get the display canvas gameobject
         GameObject dialogueDisplay = textDisplay.transform.GetChild(0).gameObject;
@@ -54,8 +50,6 @@ public class DialogueManager : MonoBehaviour
 
         if (isInteractable && Input.GetKeyDown(KeyCode.Space) && !convlock)
         {
-            print(accesibleConvs.Count);
-            getConvo(accesibleConvs[convnum]);
             order = stagedConv.lineorders.orderlist[whichOrder];
             convlock = true;
             nextTurn(); // run first part of convo
@@ -75,9 +69,11 @@ public class DialogueManager : MonoBehaviour
     {
         foreach (KeyValuePair<string, LoadScript.Conversation> conv in LoadScript.scenedialogue)
         {
+            print(thisSpeaker);
             // go through all conversations and see if the speaker matches this speaker
             if (conv.Value.initiator == thisSpeaker)
             {
+                print("Hit! " + conv.Value.convTitle+" "+thisSpeaker);
                 accesibleConvs.Add(conv.Value.convTitle);
             }
         }
@@ -135,6 +131,8 @@ public class DialogueManager : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        discoverConvos();
+
         // currently not detecting if the object entering the Collider is the player
         isInteractable = true;
         Debug.Log("Entered interactable area of Speaker");
