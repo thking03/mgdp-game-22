@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Scripting;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -17,9 +19,11 @@ public class DialogueManager : MonoBehaviour
     private int turn = -1;
 
     public GameObject textDisplay;
+    public GameObject nameDisplay;
     public TextMeshProUGUI characterName;
     public TextMeshProUGUI dialogue;
-    public Image playerSprite;
+    public List<int> order;
+    public int whichOrder = 0; // can be set to not 0 if other conditions are met
 
     private string txt;
 
@@ -33,19 +37,26 @@ public class DialogueManager : MonoBehaviour
         // initialize the text display
         textDisplay = GameObject.Find("TextDisplay"); // get the display canvas gameobject
         GameObject dialogueDisplay = textDisplay.transform.GetChild(0).gameObject;
-        dialogue = dialogueDisplay.GetComponent<TextMeshProUGUI>(); 
-        print(textDisplay);
-        print(dialogueDisplay);
-        print(dialogue);
-        //characterName = textDisplay.GetComponents<GameObject>()[1]; // character name is second
+        dialogue = dialogueDisplay.GetComponent<TextMeshProUGUI>();
+
+        // initialize the name display
+        GameObject nameDisplay = textDisplay.transform.GetChild(1).gameObject;
+        characterName = nameDisplay.GetComponent<TextMeshProUGUI>();
+
+        txt = "";
+        characterName.text = "";
+        StartCoroutine(type());
 
     }
     private void Update()
     {
+        GC.KeepAlive(dialogue);
+
         if (isInteractable && Input.GetKeyDown(KeyCode.Space) && !convlock)
         {
             print(accesibleConvs.Count);
             getConvo(accesibleConvs[convnum]);
+            order = stagedConv.lineorders.orderlist[whichOrder];
             convlock = true;
             nextTurn(); // run first part of convo
         }
@@ -87,18 +98,28 @@ public class DialogueManager : MonoBehaviour
         turn++;
        try
         {
-            txt = stagedConv.dialogueLines[turn].dialogueText;
+            int thisturn = order[turn];
+            txt = stagedConv.dialogueLines[thisturn].dialogueText;
             Debug.Log(txt);
-            // characterName.text = stagedConv.dialogueLines[turn].speaker;
-            // playerSprite.sprite = speakerSprite[stagedConv.dialogueLines[turn].speaker];
+            characterName.text = stagedConv.dialogueLines[thisturn].speaker;
             StartCoroutine(type());
         }
-        catch (KeyNotFoundException)
+        catch (KeyNotFoundException) // these exceptions get called when the conversation "completes"
         {
-            txt = "";
-            StartCoroutine(type());
-            turn = -1;
+            resetConv();
         }
+        catch (ArgumentOutOfRangeException) // these exceptions get called when the conversation "completes" (this one called first)
+        {
+            resetConv();
+        }
+    }
+
+    public void resetConv() // call this to reset the conversation
+    {
+        txt = "";
+        characterName.text = "";
+        StartCoroutine(type());
+        turn = -1;
     }
 
     IEnumerator type()
@@ -122,6 +143,7 @@ public class DialogueManager : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         isInteractable = false;
-        Debug.Log("Exited interactable area of Speaker");
+        resetConv();
+        Debug.Log("Exited interactable area of Speaker & conversation reset.");
     }
 }
